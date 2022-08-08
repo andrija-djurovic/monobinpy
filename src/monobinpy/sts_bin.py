@@ -30,7 +30,7 @@ def sts_bin(x, y,
                                  Default is 0.05 or minimum 30 observations.
                     min_avg_rate: Minimum y average rate. 
                                   Default is 0.01 or minimum 1 bad case for y 0/1.
-                    p_val: Threshold for p-value of regression coefficients. 
+                    p_val: Threshold for p-value of statistical tests. 
                            Default is 0.05.For binary target test of two proportion
                            is applied, while for continuous two samples independent t-test.
                     y_type: Type of y, possible options are 'bina' (binary), 'cont' (continuous) and 'guess'.
