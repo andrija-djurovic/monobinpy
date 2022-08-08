@@ -24,8 +24,8 @@ setup(
     install_requires = [
         "numpy >= 1.22.4",
         "pandas >= 1.4.3",
-	"scipy",
-	"scikit-learn",
-	"statsmodels"
+	"scipy >= 1.8.1",
+	"scikit-learn >= 1.1.1",
+	"statsmodels >= 0.13.2"
     ]
 )
