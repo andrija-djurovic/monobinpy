@@ -22,7 +22,7 @@ setup(
     packages = ["monobinpy"],
     package_dir = {"monobinpy": "src/monobinpy"},
     install_requires = [
-        "numpy",
+        "numpy >= 1.22.4",
         "pandas >= 1.4.3",
 	"scipy",
 	"scikit-learn",
