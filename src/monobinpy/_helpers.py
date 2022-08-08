@@ -58,7 +58,7 @@ def checks_iter(d, d_cc, y_type):
     which_cond = np.where(cond)
     if np.size(which_cond):
        first_cond = np.min(which_cond)
-       res = [first_cond, cond_msg[first_cond], y_check]
+       res = [[first_cond], cond_msg[first_cond], y_check]
     else:
        res = [[], [], y_check]
     return(res)
