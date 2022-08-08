@@ -8,8 +8,8 @@ This is replica of monobin R package.
 ## Installation
 Currently only development version is available and can be installed:
 
-``` 
-$ pip install git+https://github.com/andrija-djurovic/monobinpy.git#egg=monobinpy
+```$ 
+pip install git+https://github.com/andrija-djurovic/monobinpy.git#egg=monobinpy
 ```
 
 ## Example
