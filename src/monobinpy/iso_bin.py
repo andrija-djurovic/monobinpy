@@ -5,11 +5,51 @@ from ._helpers import *
 def iso_bin(x, y, 
             sc = [float("NaN"), float("Inf"), float("-Inf")], 
             sc_method = "together", 
-            y_type = "guess", 
             min_pct_obs = 0.05,
             min_avg_rate = 0.01, 
+            y_type = "guess", 
             force_trend = "guess"):
-    
+    """
+
+    Three-stage monotonic binning procedure. The first stage is isotonic regression used 
+    to achieve the monotonicity, while the remaining two stages are possible corrections for
+    minimum percentage of observations and target rate.
+
+            Parameters:
+            ------------
+                    x: Pandas series to be binned.
+                    y: Pandas series - target vector (binary or continuous).
+                    sc: List with special case elements. 
+                        Default values are [float("NaN"), float("Inf"), float("-Inf")].
+                        Recommendation is to keep the default values always and add new ones if needed. 
+                        Otherwise, if these values exis in x and are not defined in the sc list, 
+                        function will report the error.  
+                    sc_method: Define how special cases will be treated, all together or in separate bins.
+                               Possible values are 'together' (default), 'separately'.
+                    min_pct_obs: Minimum percentage of observations per bin. 
+                                 Default is 0.05 or minimum 30 observations.
+                    min_avg_rate: Minimum y average rate. 
+                                  Default is 0.01 or minimum 1 bad case for y 0/1.
+                    y_type: Type of y, possible options are 'bina' (binary), 'cont' (continuous) and 'guess'.
+                           If default value - 'guess' is passed, then algorithm will identify if y is 
+                           0/1 or continuous variable.
+                    force_trend: If the expected trend should be forced. 
+                                 Possible values: 'i' for increasing trend 
+                                 (y increases with increase of x), 'd' for decreasing trend 
+                                 (y decreases with decrease of x) and 'guess'. Default value is 'guess'. 
+                                 If the default value is passed, then trend will be identified 
+                                 based on the sign of the Spearman correlation coefficient 
+                                 between x and y on complete cases.
+
+            Returns:
+            ------------
+                    List of two objects. The first object, pandas data frame presents 
+                    a summary table of final binning, while second one is a pandas series 
+                    of discretized values. In case of single unique value for x or y 
+                    in complete cases (cases different than special cases), 
+                    it will return data frame with info.
+    """    
+
     checks_init(x = x.copy(),
                 y = y.copy(),
                 sc = sc,

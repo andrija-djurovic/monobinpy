@@ -9,6 +9,46 @@ def pct_bin(x, y,
             y_type = "guess", 
             woe_trend = True, 
             force_trend = "guess"):
+    """
+
+    Percentile-based monotonic binning by the iterative discretization.
+
+            Parameters:
+            ------------
+                    x: Pandas series to be binned.
+                    y: Pandas series - target vector (binary or continuous).
+                    sc: List with special case elements. 
+                        Default values are [float("NaN"), float("Inf"), float("-Inf")].
+                        Recommendation is to keep the default values always and add new ones if needed. 
+                        Otherwise, if these values exis in x and are not defined in the sc list, 
+                        function will report the error.  
+                    sc_method: Define how special cases will be treated, all together or in separate bins.
+                               Possible values are 'together' (default), 'separately'.
+                    g: Number of starting groups. Default is 15.
+                    y_type: Type of y, possible options are 'bina' (binary), 'cont' (continuous) and 'guess'.
+                           If default value - 'guess' is passed, then algorithm will identify if y is 
+                           0/1 or continuous variable.
+                    woe_trend: Applied only for a continuous target (y) as weights of evidence 
+                               (WoE) trend check. 
+                               Default is TRUE.
+                    force_trend: If the expected trend should be forced. 
+                                 Possible values: 'i' for increasing trend 
+                                 (y increases with increase of x), 'd' for decreasing trend 
+                                 (y decreases with decrease of x) and 'guess'. Default value is 'guess'. 
+                                 If the default value is passed, then trend will be identified 
+                                 based on the sign of the Spearman correlation coefficient 
+                                 between x and y on complete cases.
+
+            Returns:
+            ------------
+                    List of two objects. The first object, pandas data frame presents 
+                    a summary table of final binning, while second one is a pandas series 
+                    of discretized values. In case of single unique value for x or y 
+                    in complete cases (cases different than special cases), 
+                    it will return data frame with info.
+    """
+
+
     
     if not isinstance(woe_trend, bool):
        raise Error("woe_trend has to be boolean of lenght one.") 

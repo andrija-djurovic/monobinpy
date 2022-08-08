@@ -66,7 +66,7 @@ def checks_iter(d, d_cc, y_type):
 #formatting bins
 def format_bin_aux (l, ll, u, bin):
     if abs(l - u) < 1e-8:
-       bin_f = bin + " [" + str(round(l, 4)) + "]"
+       bin_f = bin + " [" + str(round(l, 4)) + " ]"
     elif l == float("-Inf"):
        bin_f = bin + " (" + str(round(l, 4)) + ", " + str(round(ll, 4)) + ")"
     else:
