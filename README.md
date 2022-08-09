@@ -8,8 +8,8 @@ This is replica of monobin R package.
 ## Installation
 Currently github and testing versions are available.</br>
 To install github version run the following code:
-``` 
-$ pip install git+https://github.com/andrija-djurovic/monobinpy.git#egg=monobinpy
+```console 
+pip install git+https://github.com/andrija-djurovic/monobinpy.git#egg=monobinpy
 ```
 and to install testing version:
 ``` 
