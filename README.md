@@ -6,10 +6,14 @@ separately from so-called complete cases.
 This is replica of monobin R package.
 
 ## Installation
-Currently only development version is available and can be installed:
-
+Currently github and testing versions are available.</br>
+To install github version run the following code:
 ``` 
 $ pip install git+https://github.com/andrija-djurovic/monobinpy.git#egg=monobinpy
+```
+and to install testing version:
+``` 
+$ pip install -i https://test.pypi.org/simple/ monobinpy
 ```
 
 ## Example
