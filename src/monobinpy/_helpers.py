@@ -497,7 +497,7 @@ def woe_bin_aux(tbl, woe_gap, y_check):
 #test of 2 proportions - adjacent bins
 def t2p_merge(tbl, sig):
     if tbl.shape[0] == 1:
-       tbl["p_val"] = 99
+       tbl["p_val"] = float("NaN")
        return(tbl)
     cor_coef, p = spearmanr(a = tbl.y_avg.copy(),
                             b = tbl.x_avg.copy())
