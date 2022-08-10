@@ -11,6 +11,8 @@ class Error(Exception):
     """Check errors"""
     pass
 def checks_init(x, y, sc, sc_method, y_type, force_trend):
+    if not len(x) == len(y):
+       raise Error("x and y has to be of the same length") 
     scm_opts = ["together", "separately"]
     yt_opts = ["guess", "bina", "cont"]
     ft_opts = ["guess", "i", "d"]
