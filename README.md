@@ -13,7 +13,7 @@ pip install git+https://github.com/andrija-djurovic/monobinpy.git#egg=monobinpy
 ```
 and to install testing version:
 ```cmd
-pip install -i https://test.pypi.org/simple/ monobinpy
+pip install -i https://test.pypi.org/simple/ monobinpy==0.0.2
 ```
 
 ## Example
