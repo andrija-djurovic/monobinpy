@@ -15,7 +15,7 @@ classifiers = [
     "Programming Language :: Python :: 3",
 ]
 dependencies = ["numpy", "pandas", "scipy", "scikit-learn", "statsmodels"]
-requires-python = ">=3"
+requires-python = ">=3.0"
 
 [project.optional-dependencies]
 build = ["build", "twine"]
