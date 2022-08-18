@@ -25,8 +25,8 @@ def checks_init(x, y, sc, sc_method, y_type, force_trend):
     if force_trend not in ft_opts:
        raise Error("force_trend has to be one of: " + \
                     ", ".join(ft_opts) + ".")
-    if not all([isinstance(x, float) for x in sc]):
-       raise Error("sc has to have all float elements")  
+    if not all([isinstance(x, (float, int)) for x in sc]):
+       raise Error("sc has to have all integer or float elements")  
     if (not isinstance(x, pd.Series)) | (not isinstance(y, pd.Series)):
        raise Error("x and y have to be pandas.Series")
     if not all([isinstance(x, (float, int)) for x in y]):
