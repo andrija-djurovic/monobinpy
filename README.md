@@ -6,14 +6,13 @@ separately from so-called complete cases.
 This is replica of monobin R package.
 
 ## Installation
-Currently github and testing versions are available.</br>
-To install github version run the following code:
+To install pypi.org version run the following code:
+```cmd
+pip install monobinpy
+```
+and to install development (github) version run:
 ```cmd
 pip install git+https://github.com/andrija-djurovic/monobinpy.git#egg=monobinpy
-```
-and to install testing version:
-```cmd
-pip install -i https://test.pypi.org/simple/ monobinpy==0.0.3
 ```
 
 ## Example
@@ -34,7 +33,7 @@ res[0]
 res[1].value_counts().sort_index()
 
 ```
-For more examples and package functions check the help page:
+Besides above example, additional five binning  algorithms are available. For details and additional description please check:
 ```python
 help(mb) 
 ```
